@@ -1,24 +1,24 @@
 {
-  "title": "Desmos Block Explorer",
-  "network": "morpheus-apollo-2",
+  "title": "Enci Block Explorer",
+  "network": "enci",
   "icon": "https://raw.githubusercontent.com/forbole/big-dipper-assets/master/desmos/icon.svg?sanitize=true",
   "logo": {
     "default": "https://raw.githubusercontent.com/forbole/big-dipper-assets/master/desmos/logo.svg?sanitize=true"
   },
   "prefix": {
-    "consensus": "desmosvalcons",
-    "validator": "desmosvaloper",
-    "account": "desmos"
+    "consensus": "encivalcons",
+    "validator": "encivaloper",
+    "account": "enci"
   },
   "genesis": {
     "time": "2021-07-13T08:00:00",
     "height": 1
   },
-  "primaryTokenUnit": "udaric",
-  "votingPowerTokenUnit": "udaric",
+  "primaryTokenUnit": "uenci",
+  "votingPowerTokenUnit": "uenci",
   "tokenUnits": {
-    "udaric": {
-      "display": "daric",
+    "uenci": {
+      "display": "Enci",
       "exponent": 6
     }
   },
