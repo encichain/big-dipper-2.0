@@ -13,6 +13,7 @@ import {
   MintParams,
   DistributionParams,
   GovParams,
+  CharityParams,
 } from '@models';
 import {
   ParamsState,
@@ -26,6 +27,7 @@ const initialState = {
   minting: null,
   distribution: null,
   gov: null,
+  charity: null,
 };
 
 export const useParams = () => {
@@ -137,7 +139,7 @@ export const useParams = () => {
     results.distribution = formatDistribution();
 
     // ================================
-    // distribution
+    // Gov
     // ================================
 
     const formatGov = () => {
@@ -161,6 +163,27 @@ export const useParams = () => {
 
     results.gov = formatGov();
 
+  
+    // ================================
+    // charity
+    // ================================
+    const formatCharity = () => {
+      if (data.charityParams.length) {
+        const charityParamsRaw = CharityParams.fromJson(R.pathOr({}, ['charityParams', 0, 'params'], data));
+
+        return {
+          taxCaps: charityParamsRaw.taxCaps,
+          taxRate: charityParamsRaw.taxRate,
+          burnRate: charityParamsRaw.burnRate,
+          charities: charityParamsRaw.charities,
+        };
+      }
+
+      return null;
+    };
+
+    results.charity = formatCharity();
+    console.log(results);
     return results;
   };
 

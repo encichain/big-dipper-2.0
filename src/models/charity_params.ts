@@ -27,8 +27,8 @@ class CharityParams {
                 Cap: x.Cap,
             })),
             taxRate: R.pathOr(0, ["tax_rate"], data),
-            burnRate: R.pathor(0, ["burn_rate"], data),
-            charities: R.pathor([], ["charities"], data).map((x) => ({
+            burnRate: R.pathOr(0, ["burn_rate"], data),
+            charities: R.pathOr([], ["charities"], data).map((x) => ({
                 charityName: x.charityName,
                 accAddress: x.accAddress,
                 checksum: x.checksum,

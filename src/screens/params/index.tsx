@@ -14,6 +14,7 @@ import {
   formatMinting,
   formatDistribution,
   formatGov,
+  formatCharity,
 } from './utils';
 
 const Params = () => {
@@ -45,6 +46,12 @@ const Params = () => {
     title: t('gov'),
     details: formatGov(state.gov, t),
   } : null;
+
+  const charity = state.charity ? {
+    title: t('charity'),
+    details: formatCharity(state.charity, t),
+  } : null;
+  
 
   return (
     <>
@@ -79,6 +86,11 @@ const Params = () => {
             {gov && (
             <BoxDetails {...gov} />
             )}
+            {
+              charity && (
+                <BoxDetails {...charity} />
+              )
+            }
           </span>
         </LoadAndExist>
       </Layout>

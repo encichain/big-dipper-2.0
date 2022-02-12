@@ -29,6 +29,17 @@ type Transactions = {
   };
 }
 
+type TaxCap = {
+  denom: string;
+  Cap: number;
+}
+
+type Charity = {
+  charityName: string;
+  accAddress: string;
+  checksum: string;
+}
+
 type TokenUnit = {
   displayDenom: string;
   baseDenom: string;
@@ -88,3 +99,4 @@ type MsgCoin = {
   denom: string;
   amount: string;
 }
+

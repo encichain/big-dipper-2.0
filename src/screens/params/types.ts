@@ -39,6 +39,13 @@ export type Gov = {
   votingPeriod: number;
 }
 
+export type Charity = {
+  taxCaps: TaxCap[];
+  taxRate: number;
+  burnRate: number;
+  charities: Charity[];
+}
+
 export type ParamsState = {
   loading: boolean;
   exists: boolean;
@@ -47,4 +54,5 @@ export type ParamsState = {
   minting: Minting | null;
   distribution: Distribution | null;
   gov: Gov | null;
+  charity: Charity | null;
 }

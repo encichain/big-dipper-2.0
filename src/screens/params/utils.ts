@@ -8,6 +8,7 @@ import {
   Minting,
   Distribution,
   Gov,
+  Charity,
 } from './types';
 
 export const formatStaking = (data: Staking, t: any) => {
@@ -143,6 +144,27 @@ export const formatGov = (data: Gov, t: any) => {
       detail: t('days', {
         day: secondsToDays(nanoToSeconds(data.votingPeriod)),
       }),
+    },
+  ]);
+};
+
+export const formatCharity = (data: Charity, t: any) => {
+  return ([
+    {
+      label: t('taxCaps'),
+      detail: `${data.taxCaps.map((x) => JSON.stringify({denom: x.denom, Cap: x.Cap}))}`,
+    },
+    {
+      label: t(`taxRate`),
+      detail: `${data.taxRate * 100}%`,
+    },
+    {
+      label: t(`burnRate`),
+      detail: `${data.burnRate * 100}%`,
+    },
+    {
+      label: t(`charities`),
+      detail: `${JSON.stringify(data.charities)}`,
     },
   ]);
 };

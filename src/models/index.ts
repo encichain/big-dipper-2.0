@@ -4,6 +4,7 @@ import SlashingParams from './slashing_params';
 import MintParams from './mint_params';
 import GovParams from './gov_params';
 import DistributionParams from './distribution_params';
+import CharityParams from './charity_params';
 // ================================
 // Transaction Message Types
 // ================================
@@ -77,6 +78,7 @@ export {
   MintParams,
   GovParams,
   DistributionParams,
+  CharityParams,
 };
 
 export {
