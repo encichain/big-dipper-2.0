@@ -1719,6 +1719,135 @@ export type Block_Variance_Order_By = {
   total_gas?: Maybe<Order_By>;
 };
 
+/** columns and relationships of "charity_params" */
+export type Charity_Params = {
+  __typename?: 'charity_params';
+  height: Scalars['bigint'];
+  one_row_id: Scalars['Boolean'];
+  params: Scalars['jsonb'];
+};
+
+/** columns and relationships of "charity_params" */
+export type Charity_ParamsParamsArgs = {
+  path?: Maybe<Scalars['String']>;
+};
+
+/** aggregated selection of "charity_params" */
+export type Charity_Params_Aggregate = {
+  __typename?: 'charity_params_aggregate';
+  aggregate?: Maybe<Charity_Params_Aggregate_Fields>;
+  nodes: Array<Charity_Params>;
+};
+
+/** aggregate fields of "charity_params" */
+export type Charity_Params_Aggregate_Fields = {
+  __typename?: 'charity_params_aggregate_fields';
+  avg?: Maybe<Charity_Params_Avg_Fields>;
+  count: Scalars['Int'];
+  max?: Maybe<Charity_Params_Max_Fields>;
+  min?: Maybe<Charity_Params_Min_Fields>;
+  stddev?: Maybe<Charity_Params_Stddev_Fields>;
+  stddev_pop?: Maybe<Charity_Params_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Charity_Params_Stddev_Samp_Fields>;
+  sum?: Maybe<Charity_Params_Sum_Fields>;
+  var_pop?: Maybe<Charity_Params_Var_Pop_Fields>;
+  var_samp?: Maybe<Charity_Params_Var_Samp_Fields>;
+  variance?: Maybe<Charity_Params_Variance_Fields>;
+};
+
+
+/** aggregate fields of "charity_params" */
+export type Charity_Params_Aggregate_FieldsCountArgs = {
+  columns?: Maybe<Array<Charity_Params_Select_Column>>;
+  distinct?: Maybe<Scalars['Boolean']>;
+};
+
+/** aggregate avg on columns */
+export type Charity_Params_Avg_Fields = {
+  __typename?: 'charity_params_avg_fields';
+  height?: Maybe<Scalars['Float']>;
+};
+
+/** Boolean expression to filter rows from the table "charity_params". All fields are combined with a logical 'AND'. */
+export type Charity_Params_Bool_Exp = {
+  _and?: Maybe<Array<Charity_Params_Bool_Exp>>;
+  _not?: Maybe<Charity_Params_Bool_Exp>;
+  _or?: Maybe<Array<Charity_Params_Bool_Exp>>;
+  height?: Maybe<Bigint_Comparison_Exp>;
+  one_row_id?: Maybe<Boolean_Comparison_Exp>;
+  params?: Maybe<Jsonb_Comparison_Exp>;
+};
+
+/** aggregate max on columns */
+export type Charity_Params_Max_Fields = {
+  __typename?: 'charity_params_max_fields';
+  height?: Maybe<Scalars['bigint']>;
+};
+
+/** aggregate min on columns */
+export type Charity_Params_Min_Fields = {
+  __typename?: 'charity_params_min_fields';
+  height?: Maybe<Scalars['bigint']>;
+};
+
+/** Ordering options when selecting data from "charity_params". */
+export type Charity_Params_Order_By = {
+  height?: Maybe<Order_By>;
+  one_row_id?: Maybe<Order_By>;
+  params?: Maybe<Order_By>;
+};
+
+/** select columns of table "charity_params" */
+export enum Charity_Params_Select_Column {
+  /** column name */
+  Height = 'height',
+  /** column name */
+  OneRowId = 'one_row_id',
+  /** column name */
+  Params = 'params'
+}
+
+/** aggregate stddev on columns */
+export type Charity_Params_Stddev_Fields = {
+  __typename?: 'charity_params_stddev_fields';
+  height?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate stddev_pop on columns */
+export type Charity_Params_Stddev_Pop_Fields = {
+  __typename?: 'charity_params_stddev_pop_fields';
+  height?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Charity_Params_Stddev_Samp_Fields = {
+  __typename?: 'charity_params_stddev_samp_fields';
+  height?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate sum on columns */
+export type Charity_Params_Sum_Fields = {
+  __typename?: 'charity_params_sum_fields';
+  height?: Maybe<Scalars['bigint']>;
+};
+
+/** aggregate var_pop on columns */
+export type Charity_Params_Var_Pop_Fields = {
+  __typename?: 'charity_params_var_pop_fields';
+  height?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate var_samp on columns */
+export type Charity_Params_Var_Samp_Fields = {
+  __typename?: 'charity_params_var_samp_fields';
+  height?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate variance on columns */
+export type Charity_Params_Variance_Fields = {
+  __typename?: 'charity_params_variance_fields';
+  height?: Maybe<Scalars['Float']>;
+};
 
 /** Boolean expression to compare columns of type "coin". All fields are combined with logical 'AND'. */
 export type Coin_Comparison_Exp = {
@@ -6094,6 +6223,12 @@ export type Query_Root = {
   block_aggregate: Block_Aggregate;
   /** fetch data from the table: "block" using primary key columns */
   block_by_pk?: Maybe<Block>;
+  /** fetch data from the table: "charity_params" */
+  charity_params: Array<Charity_Params>;
+  /** fetch aggregated fields from the table: "charity_params" */
+  charity_params_aggregate: Charity_Params_Aggregate;
+  /** fetch data from the table: "charity_params" using primary key columns */
+  charity_params_by_pk?: Maybe<Charity_Params>;
   /** fetch data from the table: "community_pool" */
   community_pool: Array<Community_Pool>;
   /** fetch aggregated fields from the table: "community_pool" */
@@ -6556,6 +6691,28 @@ export type Query_RootBlock_AggregateArgs = {
 
 export type Query_RootBlock_By_PkArgs = {
   height: Scalars['bigint'];
+};
+
+export type Query_RootCharity_ParamsArgs = {
+  distinct_on?: Maybe<Array<Charity_Params_Select_Column>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+  order_by?: Maybe<Array<Charity_Params_Order_By>>;
+  where?: Maybe<Charity_Params_Bool_Exp>;
+};
+
+
+export type Query_RootCharity_Params_AggregateArgs = {
+  distinct_on?: Maybe<Array<Charity_Params_Select_Column>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+  order_by?: Maybe<Array<Charity_Params_Order_By>>;
+  where?: Maybe<Charity_Params_Bool_Exp>;
+};
+
+
+export type Query_RootCharity_Params_By_PkArgs = {
+  one_row_id: Scalars['Boolean'];
 };
 
 
@@ -8153,6 +8310,12 @@ export type Subscription_Root = {
   block_aggregate: Block_Aggregate;
   /** fetch data from the table: "block" using primary key columns */
   block_by_pk?: Maybe<Block>;
+  /** fetch data from the table: "charity_params" */
+  charity_params: Array<Charity_Params>;
+  /** fetch aggregated fields from the table: "charity_params" */
+  charity_params_aggregate: Charity_Params_Aggregate;
+  /** fetch data from the table: "charity_params" using primary key columns */
+  charity_params_by_pk?: Maybe<Charity_Params>;
   /** fetch data from the table: "community_pool" */
   community_pool: Array<Community_Pool>;
   /** fetch aggregated fields from the table: "community_pool" */
@@ -8536,6 +8699,27 @@ export type Subscription_RootBlock_By_PkArgs = {
   height: Scalars['bigint'];
 };
 
+export type Subscription_RootCharity_ParamsArgs = {
+  distinct_on?: Maybe<Array<Charity_Params_Select_Column>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+  order_by?: Maybe<Array<Charity_Params_Order_By>>;
+  where?: Maybe<Charity_Params_Bool_Exp>;
+};
+
+
+export type Subscription_RootCharity_Params_AggregateArgs = {
+  distinct_on?: Maybe<Array<Charity_Params_Select_Column>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+  order_by?: Maybe<Array<Charity_Params_Order_By>>;
+  where?: Maybe<Charity_Params_Bool_Exp>;
+};
+
+
+export type Subscription_RootCharity_Params_By_PkArgs = {
+  one_row_id: Scalars['Boolean'];
+};
 
 export type Subscription_RootCommunity_PoolArgs = {
   distinct_on?: Maybe<Array<Community_Pool_Select_Column>>;
@@ -13677,7 +13861,8 @@ export type StakingParamsQuery = { stakingParams: Array<(
 export type ParamsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ParamsQuery = { stakingParams: Array<(
+export type ParamsQuery = { 
+    stakingParams: Array<(
     { __typename?: 'staking_params' }
     & Pick<Staking_Params, 'params'>
   )>, slashingParams: Array<(
@@ -13692,7 +13877,11 @@ export type ParamsQuery = { stakingParams: Array<(
   )>, govParams: Array<(
     { __typename?: 'gov_params' }
     & { depositParams: Gov_Params['deposit_params'], tallyParams: Gov_Params['tally_params'], votingParams: Gov_Params['voting_params'] }
-  )> };
+  )>, charityParams: Array<(
+    { __typename?: 'charity_params' }
+    & Pick<Charity_Params, 'params'>
+  )>,
+};
 
 export type ProposalDetailsQueryVariables = Exact<{
   proposalId?: Maybe<Scalars['Int']>;
@@ -14714,7 +14903,7 @@ export type StakingParamsQueryHookResult = ReturnType<typeof useStakingParamsQue
 export type StakingParamsLazyQueryHookResult = ReturnType<typeof useStakingParamsLazyQuery>;
 export type StakingParamsQueryResult = Apollo.QueryResult<StakingParamsQuery, StakingParamsQueryVariables>;
 export const ParamsDocument = gql`
-    query Params {
+  query Params {
   stakingParams: staking_params(limit: 1, order_by: {height: desc}) {
     params
   }
@@ -14731,6 +14920,9 @@ export const ParamsDocument = gql`
     depositParams: deposit_params
     tallyParams: tally_params
     votingParams: voting_params
+  }
+  charityParams: charity_params (limit: 1, order_by: {height: desc}) {
+    params
   }
 }
     `;
@@ -14752,6 +14944,7 @@ export const ParamsDocument = gql`
  */
 export function useParamsQuery(baseOptions?: Apollo.QueryHookOptions<ParamsQuery, ParamsQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
+        console.log(Apollo.useQuery<ParamsQuery, ParamsQueryVariables>(ParamsDocument, options))
         return Apollo.useQuery<ParamsQuery, ParamsQueryVariables>(ParamsDocument, options);
       }
 export function useParamsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ParamsQuery, ParamsQueryVariables>) {
