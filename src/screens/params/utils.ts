@@ -15,7 +15,7 @@ export const formatStaking = (data: Staking, t: any) => {
   return ([
     {
       label: t('bondDenom'),
-      detail: data.bondDenom,
+      detail: data.bondDenom.toUpperCase(),
     },
     {
       label: t('unbondingTime'),

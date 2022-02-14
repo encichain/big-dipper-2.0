@@ -64,7 +64,7 @@ export const useParams = () => {
       if (data.stakingParams.length) {
         const stakingParamsRaw = StakingParams.fromJson(R.pathOr({}, ['stakingParams', 0, 'params'], data));
         return {
-          bondDenom: stakingParamsRaw.bondDenom,
+          bondDenom: formatToken(0, stakingParamsRaw.bondDenom).displayDenom,
           unbondingTime: stakingParamsRaw.unbondingTime,
           maxEntries: stakingParamsRaw.maxEntries,
           historicalEntries: stakingParamsRaw.historicalEntries,
