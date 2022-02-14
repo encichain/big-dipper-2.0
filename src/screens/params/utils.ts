@@ -152,7 +152,7 @@ export const formatCharity = (data: Charity, t: any) => {
   return ([
     {
       label: t('taxCaps'),
-      detail: `${data.taxCaps.map((x) => JSON.stringify({denom: x.denom, Cap: x.Cap}))}`,
+      detail: `${data.taxCaps.map((x) => JSON.stringify({denom: x.displayDenom.toUpperCase(), Cap: x.value}))}`,
     },
     {
       label: t(`taxRate`),

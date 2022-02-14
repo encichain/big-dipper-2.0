@@ -172,7 +172,7 @@ export const useParams = () => {
         const charityParamsRaw = CharityParams.fromJson(R.pathOr({}, ['charityParams', 0, 'params'], data));
 
         return {
-          taxCaps: charityParamsRaw.taxCaps,
+          taxCaps: charityParamsRaw.taxCaps.map((x) => formatToken(x.Cap, x.denom)),
           taxRate: charityParamsRaw.taxRate,
           burnRate: charityParamsRaw.burnRate,
           charities: charityParamsRaw.charities,
@@ -183,7 +183,6 @@ export const useParams = () => {
     };
 
     results.charity = formatCharity();
-    console.log(results);
     return results;
   };
 

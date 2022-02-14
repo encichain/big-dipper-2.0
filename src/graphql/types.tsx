@@ -14944,7 +14944,6 @@ export const ParamsDocument = gql`
  */
 export function useParamsQuery(baseOptions?: Apollo.QueryHookOptions<ParamsQuery, ParamsQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        console.log(Apollo.useQuery<ParamsQuery, ParamsQueryVariables>(ParamsDocument, options))
         return Apollo.useQuery<ParamsQuery, ParamsQueryVariables>(ParamsDocument, options);
       }
 export function useParamsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ParamsQuery, ParamsQueryVariables>) {

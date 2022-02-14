@@ -5,7 +5,7 @@ export const useStyles = () => {
     (theme) => {
       return ({
         root: {
-          overflow: 'hidden',
+          overflow: 'auto',
         },
         header: {
 
@@ -24,10 +24,11 @@ export const useStyles = () => {
           },
           '& .label': {
             marginBottom: theme.spacing(1),
+            marginRight: theme.spacing(3),
           },
           '& .detail': {
             '&.MuiTypography-body1': {
-              wordWrap: 'break-word',
+              overflowWrap: 'anywhere'
             },
           },
           [theme.breakpoints.up('md')]: {

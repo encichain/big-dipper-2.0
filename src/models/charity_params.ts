@@ -22,14 +22,11 @@ class CharityParams {
 
     static fromJson(data: any) {
         return new CharityParams({
-            taxCaps: R.pathOr([], ["tax_caps"], data).map((x) => ({
-                denom: x.denom,
-                Cap: x.Cap,
-            })),
+            taxCaps: R.pathOr([], ["tax_caps"], data),
             taxRate: R.pathOr(0, ["tax_rate"], data),
             burnRate: R.pathOr(0, ["burn_rate"], data),
             charities: R.pathOr([], ["charities"], data).map((x) => ({
-                charityName: x.charityName,
+                charityName: x.charity_name,
                 accAddress: x.accAddress,
                 checksum: x.checksum,
             }))

@@ -76,7 +76,7 @@ const Params = () => {
             slashing && (
               <BoxDetails {...slashing} />
             )
-          }
+            }
             {minting && (
             <BoxDetails {...minting} />
             )}
@@ -87,9 +87,9 @@ const Params = () => {
             <BoxDetails {...gov} />
             )}
             {
-              charity && (
-                <BoxDetails {...charity} />
-              )
+            charity && (
+              <BoxDetails {...charity} />
+            )
             }
           </span>
         </LoadAndExist>

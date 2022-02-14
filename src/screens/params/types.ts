@@ -40,7 +40,7 @@ export type Gov = {
 }
 
 export type Charity = {
-  taxCaps: TaxCap[];
+  taxCaps: TokenUnit[];
   taxRate: number;
   burnRate: number;
   charities: Charity[];
