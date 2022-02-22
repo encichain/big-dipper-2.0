@@ -1,0 +1,30 @@
+name: Big-Dipper-2.0
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        uses: appleboy/ssh-action@v0.1.2
+        with:
+          host: ${{secrets.SSH_HOST}}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd ~/Desktop/
+            git clone https://${{ secrets.GIT_USERNAME }}:${{ secrets.GIT_PAT }}@github.com/encichain/big-dipper-2.0.git big-dipper-2.0-build
+            cd big-dipper-2.0-build
+            npm install
+            npm run build
+            cd ~/Desktop/
+            rm "big-dipper-2.0"
+            mv big-dipper-2.0-build big-dipper-2.0
+            rm big-dipper-2.0-build
+            cd big-dipper-2.0
+            pm2 stop "big-dipper-2.0"
+            pm2 delete "big-dipper-2.0"
+            PORT=3003 pm2 start npm --interpreter bash --name "lunie-light" -- start
