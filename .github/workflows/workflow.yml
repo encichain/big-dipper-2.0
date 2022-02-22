@@ -21,10 +21,10 @@ jobs:
             npm install
             npm run build
             cd ~/Desktop/
-            rm "big-dipper-2.0"
+            rm -r big-dipper-2.0
             mv big-dipper-2.0-build big-dipper-2.0
-            rm big-dipper-2.0-build
+            rm -r big-dipper-2.0-build
             cd big-dipper-2.0
             pm2 stop "big-dipper-2.0"
             pm2 delete "big-dipper-2.0"
-            PORT=3003 pm2 start npm --interpreter bash --name "big-dipper-2.0" -- start
+            PORT=3003 pm2 start npm --name "big-dipper-2.0" -- start
