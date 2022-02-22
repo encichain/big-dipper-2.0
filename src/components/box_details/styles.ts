@@ -28,7 +28,7 @@ export const useStyles = () => {
           },
           '& .detail': {
             '&.MuiTypography-body1': {
-              overflowWrap: 'anywhere'
+              overflowWrap: 'anywhere',
             },
           },
           [theme.breakpoints.up('md')]: {
